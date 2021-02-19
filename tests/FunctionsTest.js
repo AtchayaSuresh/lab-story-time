@@ -115,9 +115,9 @@ describe("Check which of the argument passed is of type NaN  - doesFriendExist",
   });
 
   it("Return 'NaN' for the arguments('NaN',NaN)", function() {
-    let actualResult = doesFriendExist("NaN", NaN);
+    let actualResult = doesFriendExist('NaN', NaN);
 
-    let expectedResult = "NaN";
+    let expectedResult = 'NaN';
 
     expect(actualResult).toEqual(expectedResult);
   });
@@ -252,6 +252,14 @@ describe("Decide what actions Karen will take next - aDifficultChoice", function
     expect(actualResult).toEqual(expectedResult);
   });
 
+  it("Return 'Refused to do anything for Karen' when choice is 'I give up'", function() {
+    let actualResult = aDifficultChoice("I give up");
+
+    let expectedResult = "Refused to do anything for Karen";
+
+    expect(actualResult).toEqual(expectedResult);
+  });
+  
   it("Return 'Wasn't able to decide' when choice is undefined", function() {
     let actualResult = aDifficultChoice(undefined);
 
@@ -260,11 +268,5 @@ describe("Decide what actions Karen will take next - aDifficultChoice", function
     expect(actualResult).toEqual(expectedResult);
   });
 
-  it("Return 'Refused to do anything for Karen' when choice is 'I give up'", function() {
-    let actualResult = aDifficultChoice("I give up");
-
-    let expectedResult = "Refused to do anything for Karen";
-
-    expect(actualResult).toEqual(expectedResult);
-  });
+ 
 });
